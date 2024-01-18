@@ -1,0 +1,12 @@
+{
+  "type": "module",
+    "scripts": {
+    "devStart": "nodemon app/server.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.5",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.0",
+    "nodemon": "^3.0.3"
+  }
+}
