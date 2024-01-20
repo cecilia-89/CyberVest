@@ -1,0 +1,10 @@
+@use '../../main.scss';
+
+.index {
+    display: flex;
+
+    img {
+        max-width: 500px;
+    }
+
+}

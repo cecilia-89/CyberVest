@@ -2,37 +2,51 @@ import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import './navbar.scss';
 
+
 const Navigation = () => {
+   
+    // useEffect(() => {
+
+    //     document.addEventListener(('click'), (e) => {
+
+    //         const prevSibling = e.target.previousSibling
+
+    //         if (prevSibling && prevSibling.classList.contains('dropdown')) {
+    //             prevSibling.classList.toggle('active')
+    //             setPrevTarget(prevSibling)
+    //         }
+    //     })
+    // }, [])
 
     return (
             <>
                 <nav>
                     <div>
-                        <div data-nav-dropdown>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eligendi sit ipsum enim odio distinctio cum laudantium, exercitationem ipsam saepe.</div>
+                        <div className='dropdown'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eligendi sit ipsum enim odio distinctio cum laudantium, exercitationem ipsam saepe.</div>
                         <a href='#'>Investing</a>
                         <ion-icon name="chevron-down-sharp"></ion-icon>
                     </div>
 
                     <div>
-                        <div data-nav-dropdown>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eligendi sit ipsum enim odio distinctio cum laudantium, exercitationem ipsam saepe.</div>
+                        <div className='dropdown'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eligendi sit ipsum enim odio distinctio cum laudantium, exercitationem ipsam saepe.</div>
                         <a href='#'>Cash</a>
                         <ion-icon name="chevron-down-sharp"></ion-icon>
                     </div>
 
                     <div>
-                        <div data-nav-dropdown>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eligendi sit ipsum enim odio distinctio cum laudantium, exercitationem ipsam saepe.</div>
+                        <div className='dropdown'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eligendi sit ipsum enim odio distinctio cum laudantium, exercitationem ipsam saepe.</div>
                         <a href='#'>Planning</a>
                         <ion-icon name="chevron-down-sharp"></ion-icon>
                     </div>
 
-                    <div onClick={() => console.log('open')}>
-                        <div data-nav-dropdown>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eligendi sit ipsum enim odio distinctio cum laudantium, exercitationem ipsam saepe.</div>
+                    <div>
+                        <div className='dropdown'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eligendi sit ipsum enim odio distinctio cum laudantium, exercitationem ipsam saepe.</div>
                         <a href='#'>Bonds</a>
                         <ion-icon name="chevron-down-sharp"></ion-icon>
                     </div>
 
                     <div>
-                        <div data-nav-dropdown>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eligendi sit ipsum enim odio distinctio cum laudantium, exercitationem ipsam saepe.</div>
+                        <div className='dropdown'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eligendi sit ipsum enim odio distinctio cum laudantium, exercitationem ipsam saepe.</div>
                         <a href='#'>Stocks</a>
                         <ion-icon name="chevron-down-sharp"></ion-icon>
                     </div> 
@@ -40,7 +54,7 @@ const Navigation = () => {
 
                 <div className='button'>
                     <div>
-                        <button data-register>Log in</button>
+                        <button data-button-outline>Log in</button>
                     </div>
 
                     <div>
@@ -49,25 +63,13 @@ const Navigation = () => {
                 </div>
             </>
         )
-    }
+}
 
 
 const Navbar = () => {
 
     const [state, setState] = useState(false)
     const isMobile = useMediaQuery({query: '(max-width: 960px)'})
-
-    useEffect(() => {
-    document.addEventListener(('click'), (e) => {
-         
-        const prevSibling = e.target.previousSibling
-        if (prevSibling && prevSibling.hasAttribute('data-nav-dropdown')) {
-            prevSibling.classList.toggle('active')
-        }
-    
-    }, [])
-})
-
 
 
     return ( 
@@ -84,7 +86,8 @@ const Navbar = () => {
                 <Navigation />
                 <div className='menu-button'>
                     <div onClick={() => setState(!state)}>
-                        <ion-icon name="menu-sharp"></ion-icon>
+                        {!state? <ion-icon name="menu-sharp"></ion-icon> :
+                        <ion-icon name="close-outline"></ion-icon>}
                     </div>
                 </div>
             </div>
