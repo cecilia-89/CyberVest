@@ -1,10 +1,96 @@
 @use '../../main.scss';
 
-.index {
-    display: flex;
 
-    img {
-        max-width: 500px;
+section.index {
+    background: main.$yellow;
+    overflow: hidden;
+
+    &>div:first-child {
+        display: flex;
+        padding: 50px 50px 0;
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0;
+        }
+
+        p {
+            font-size: 1em;
+            margin-bottom: 50px;
+        }
+
+        .image-wrapper {
+            transform: translateY(30px);
+            position: relative;
+
+            img {
+                max-width: 550px;
+            }
+
+            img:last-child {
+                position: absolute;
+                max-width: 900px;
+                left: -20%;
+                bottom: 0;
+                z-index: -1;
+            }
+        }
     }
 
+    .bottom-image > img {
+        width: 100%;
+        position: relative;
+        display: block;
+        margin-top: -80px;
+    }
+
+    .bottom-image:before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        left: 0;
+        height: 10px;
+        margin-top: -5px;
+        bottom: 0;
+        background: main.$dark-blue;
+    }
+  
+    &>div:last-child {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+
+
+@media (max-width: 1023px) {
+
+    section.index {
+
+        &>div:first-child {
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    section.index > div:first-child {
+        padding: 50px 20px 0;
+        .image-wrapper img {
+            max-width: 400px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    section.index > div:first-child {
+        font-size: .8em;
+        .image-wrapper img {
+            max-width: 300px;
+        }
+    }
 }

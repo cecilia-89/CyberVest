@@ -2,11 +2,15 @@
 
 .FAQs {
     display: flex;
+    background: main.$white;
+    padding: 100px;
     gap: 20px;
-    justify-content: space-evenly;
+    justify-content: space-around;
+
+    
 
     &>div:nth-child(2) {
-        flex-basis: 550px;
+        flex-basis: 800px;
 
         &>ul {
             margin: 0;
@@ -23,7 +27,8 @@
                     align-items: center;
 
                     h2 {
-                        font-size: 1em;
+                        font-size: 1.2em;
+                        font-weight: 500;
                         width: 100%;
                     }
 

@@ -2,14 +2,16 @@
 
 header {
     width: 100%;
+    background: main.$yellow;
 
     a {
         text-decoration: none;
+        color: main.$black;
     }
 
     &>div {
         width: 100%;
-        padding: 20px 0;
+        padding: 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -25,12 +27,12 @@ header {
             display: flex;
             position: relative;
             font-weight: 500;
-            color: main.$blue;
+            color: main.$black;
             align-items: flex-end;
 
             .dropdown {
                 position: absolute;
-                width: 250px;
+                width: 200px;
                 background-color: main.$white;
                 display: none;
                 box-shadow: 0 0 10px #a9a9a97d;
@@ -75,13 +77,14 @@ header {
     .menu, .hidden {
         position: fixed;
         width: 400px;
-        z-main: 2;
+        z-index: 3;
         font-size: 1.25em;
         right: 0;
+        color: main.$white;
         transition:all .3s ease-in-out;
         transform: translateX(0);
         align-items: flex-start;
-        background: pink;
+        background: main.$bright-yellow;
         height: 100vh;
 
         &>div {

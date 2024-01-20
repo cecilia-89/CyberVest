@@ -1,7 +1,14 @@
-$blue: rgb(57, 57, 226);
+$blue: #3269ff;
+$dark-blue:#000b50;
+$light-gray: #fafafa;
+$darkest-blue: #18172b;
+// $light-teal: #f5fffe;
+$yellow: #fcefc0;
+// $teal: #d8ffe2;
+$bright-yellow: #f5c400;
 $black: rgb(56, 55, 55);
 $green: rgb(72, 234, 72);
-$white: rgb(254, 254, 254);
+$white: #ffffff;
 
 
 
@@ -18,15 +25,20 @@ $white: rgb(254, 254, 254);
   box-sizing: border-box;
 }
 
+#root {
+  background: $dark-blue;
+}
+
 
 button {
   background: $blue;
-  padding: 10px 20px;
+  padding: 15px 22px;
   border: 2px solid $blue;
   color: $white;
   font-weight: 600;
   border-radius: 5px;
 }
+
 
 button[data-button-outline] {
   background: transparent;
@@ -36,8 +48,4 @@ button[data-button-outline] {
 body {
   margin: 0;
   font-family: 'Montserrat';
-}
-
-#root {
-  padding: 0 20px;
 }
