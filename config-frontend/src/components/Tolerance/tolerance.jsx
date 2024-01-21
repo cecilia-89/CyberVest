@@ -17,12 +17,40 @@ const Tolerance = () => {
         queryFn: () => axios.get(`risk/${value}`)
     },)
 
-    if (isLoading) {
-        return <div>Loading..</div>
-    }
 
-    if (isError) {
-        return <pre>Error</pre>
+    const getState = () => {
+
+        if (isLoading) {
+            return (
+                <div className='query-state'>
+                    <div>
+                        <img src="https://res.cloudinary.com/dqdtnitie/image/upload/v1705874379/oie_212255453xKxXXyC_ln8p1l.gif" alt="" />
+                    </div>
+                </div>
+            )
+        }
+
+        if (isError) {
+            return (
+                <div className='query-state'>
+                    <p>
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        Something went wrong
+                    </p>
+                </div>
+            )
+        }
+
+        return (
+            <div>
+                {data? data.data.stocks.filter((stock) => stock.percentage !== 0).map((stock) => (
+                    <div className='bars'>
+                        <div><p>{stock.name}</p></div>
+                        <div style={{width:`${stock.percentage + 10}%`}}>{stock.percentage}%</div>
+                    </div>
+                )) : ''}
+            </div>
+        )
     }
 
 
@@ -48,14 +76,7 @@ const Tolerance = () => {
                     </div>
 
                     <div>
-                       <div>
-                        {data? data.data.stocks.filter((stock) => stock.percentage !== 0).map((stock) => (
-                            <div className='bars'>
-                                <div><p>{stock.name}</p></div>
-                                <div style={{width:`${stock.percentage + 10}%`}}>{stock.percentage}%</div>
-                            </div>
-                        )) : ''}
-                       </div>
+                       {getState()}
                     </div>
                 </div>
             </div>  

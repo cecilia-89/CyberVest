@@ -1,14 +1,17 @@
 import express from "express";
 import cors from "cors"
 import morgan from "morgan"
+import dotenv from 'dotenv'
 import mongoose from "mongoose";
 import getRisk from './controller.js';
 
 const server = express();
+dotenv.config()
 server.use(cors())
 server.use(morgan('dev'))
 
-const uri = "mongodb+srv://catabong89:0lUcXwGJzFI7rjaD@cybervest.0vofb9r.mongodb.net/cybervest"
+const uri = process.env.MONGODB_URL;
+
 
 async function connect() {
     try {

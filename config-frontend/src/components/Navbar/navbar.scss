@@ -80,11 +80,12 @@ header {
         z-index: 3;
         font-size: 1.25em;
         right: 0;
-        color: main.$white;
+        box-shadow: 0 0 15px main.$shadow;
+        color: main.$black;
         transition:all .3s ease-in-out;
         transform: translateX(0);
         align-items: flex-start;
-        background: main.$bright-yellow;
+        background: main.$white;
         height: 100vh;
 
         &>div {
@@ -97,7 +98,7 @@ header {
                 &>div {
                     display: flex;
                     justify-content: space-between;
-                    border-bottom: 1px solid main.$blue;
+                    border-bottom: 1px solid main.$black;
                     padding: 15px 0;
                 }
             }

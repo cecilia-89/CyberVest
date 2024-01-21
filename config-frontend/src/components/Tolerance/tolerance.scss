@@ -3,7 +3,7 @@
 section.tolerance {
     background: main.$dark-blue;
     color: white;
-    padding: 50px;
+    padding: 50px 20px;
 
     &>div {
         display: flex;
@@ -15,12 +15,12 @@ section.tolerance {
 
             h2 {
                 font-weight: 800;
-                font-size: 2em;
+                font-size: 1.8em;
                 margin-bottom: 5px;
             }
 
             p {
-                font-size: 1.5em;
+                font-size: 1.3em;
                 margin: 0;
             }
         }
@@ -30,6 +30,14 @@ section.tolerance {
 
             p {
                 font-weight: 700;
+            }
+
+            .query-state {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
             }
         }
 
@@ -43,11 +51,21 @@ section.tolerance {
             align-items: center;
 
             &>div:last-child {
-                border-radius: 5px;
                 padding: 15px;
                 color: main.$white;
                 background-color: main.$blue;
             }
+        }
+    }
+}
+
+@media (max-width: 912px) {
+
+    section.tolerance > div {
+        display: block;
+
+        .tolerance-content  {
+                text-align: center;
         }
     }
 }
