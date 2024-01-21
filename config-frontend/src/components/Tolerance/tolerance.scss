@@ -1,0 +1,53 @@
+@use '../../main.scss';
+
+section.tolerance {
+    background: main.$dark-blue;
+    color: white;
+    padding: 50px;
+
+    &>div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .tolerance-content {
+            flex-basis: 40%;
+
+            h2 {
+                font-weight: 800;
+                font-size: 2em;
+                margin-bottom: 5px;
+            }
+
+            p {
+                font-size: 1.5em;
+                margin: 0;
+            }
+        }
+
+        .tolerance-range {
+            flex-basis: 50%;
+
+            p {
+                font-weight: 700;
+            }
+        }
+
+        &>div {
+            width: 100%;
+        }
+
+        .bars {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &>div:last-child {
+                border-radius: 5px;
+                padding: 15px;
+                color: main.$white;
+                background-color: main.$blue;
+            }
+        }
+    }
+}

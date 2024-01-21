@@ -1,4 +1,4 @@
-$blue: #3269ff;
+$blue: rgb(31, 97, 190);
 $faint-blue: rgb(231, 241, 255);
 $dark-blue:#000b50;
 $shadow: rgba(0,0,0,.1);
@@ -25,8 +25,10 @@ $white: #ffffff;
   box-sizing: border-box;
 }
 
-#root {
-  background: $dark-blue;
+.body-wrapper {
+  max-width: 1650px;
+  box-shadow: 0 0 15px $shadow;
+  margin: 0 auto;
 }
 
 
@@ -49,3 +51,9 @@ body {
   margin: 0;
   font-family: 'Montserrat';
 }
+
+// @media (min-width: 1920px) {
+//   #root {
+//     padding: 0 100px;
+//   }
+// }

@@ -22,7 +22,7 @@ const Index = () => {
          </div>
 
          <div className='bottom-image'>
-            <img src="https://res.cloudinary.com/dqdtnitie/image/upload/v1705745384/landscape-day-bottom-image_desktop_ueomvk.svg" alt="" srcset="" />
+            <img src="https://res.cloudinary.com/dqdtnitie/image/upload/v1705745384/landscape-day-bottom-image_desktop_ueomvk.svg" alt=""/>
         </div>
     </section>
      );

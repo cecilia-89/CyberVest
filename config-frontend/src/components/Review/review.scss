@@ -6,10 +6,15 @@ section.review {
 
     &>div {
         margin: 0 auto;
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-rows: 1fr;
+        gap: 30px;
         max-width: 950px;
 
         &>div:first-child {
             background: main.$faint-blue;
+            width: auto;
             box-shadow:  0 5px 30px main.$shadow;
             padding: 30px;
             border-radius: 5px;
@@ -37,10 +42,10 @@ section.review {
         }
     
         .comments {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            margin-top: 30px;
             gap: 30px;
+            display: grid;
+            height: fit-content;
+            grid-template-columns: repeat(3, 1fr);
     
             &>div {
                 box-shadow:  0 5px 30px main.$shadow;
