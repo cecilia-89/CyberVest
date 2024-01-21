@@ -1,0 +1,97 @@
+@use '../../main.scss';
+
+section.review {
+    background: main.$white;
+    padding: 100px 50px;
+
+    &>div {
+        margin: 0 auto;
+        max-width: 950px;
+
+        &>div:first-child {
+            background: main.$faint-blue;
+            box-shadow:  0 5px 30px main.$shadow;
+            padding: 30px;
+            border-radius: 5px;
+    
+            p {
+                font-size: 2.5em;
+                color: main.$darkest-blue;
+                text-align: center;
+                font-weight: 600;
+            }
+    
+            &>div {
+                display: flex;
+                flex-direction: row-reverse;
+                gap: 10px;
+                font-size: .6em;
+                margin-top: 15px;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    
+        p {
+            margin: 0;
+        }
+    
+        .comments {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 30px;
+            gap: 30px;
+    
+            &>div {
+                box-shadow:  0 5px 30px main.$shadow;
+                border-radius: 10px;
+                max-width: 900px;
+                padding: 20px;
+            }
+    
+            p {
+                font-weight: 500;
+                font-size: 1.1em;
+            }
+    
+            [data-client] {
+                display: flex;
+                margin-top: 20px;
+    
+                p {
+                    font-weight: 700;
+                }
+            }
+        }
+
+    }
+}
+
+
+@media (max-width: 768px) {
+    section.review {
+        padding: 20px 50px;
+
+        &>div {
+
+            &>div:first-child p {
+                font-size: 1.5em;
+            }
+
+            .comments {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}
+
+
+@media (max-width: 480px) {
+    section.review > div{
+
+    .comments {
+        grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    
+}

@@ -2,12 +2,11 @@
 
 .FAQs {
     display: flex;
-    background: main.$white;
+    background: main.$faint-blue;
     padding: 100px;
     gap: 20px;
     justify-content: space-around;
 
-    
 
     &>div:nth-child(2) {
         flex-basis: 800px;
@@ -69,6 +68,7 @@
 
 @media (max-width: 768px) {
     .FAQs {
+        padding: 50px;
         display: block;
     }
 }

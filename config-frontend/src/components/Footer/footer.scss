@@ -45,6 +45,7 @@
         
         &>div {
             display: flex;
+            padding: 20px 0;
             flex-wrap: wrap;
             border-top: 1px solid main.$white;
             justify-content: space-between;
