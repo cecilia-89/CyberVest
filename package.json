@@ -1,5 +1,6 @@
 {
   "type": "module",
+  "main": "config/server.js",
   "scripts": {
     "devStart": "nodemon config/server.js"
   },
