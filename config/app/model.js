@@ -1,17 +1,15 @@
 import mongoose from "mongoose";
 
 const riskSchema = new mongoose.Schema({
-    'Tolerance': Number,
-    'Nigerian stocks': Number,
-    'Foreign stocks': Number,
-    'Tech stocks': Number,
-    'Emerging bonds': Number,
-    'Nigerian bonds': Number,
-    'Foreign bonds': Number,
-    'Commodoties': Number,
-    'Real estate': Number, 
-    'T-bills': Number,
-    'Alternates': Number,
+    tolerance: {
+        value: { type: Number},
+        stocks: [ 
+          {
+            name: { type: String },
+            percentage: { type: Number },
+          },
+        ],
+    },
 })
 
 const risks = mongoose.model('risks', riskSchema);

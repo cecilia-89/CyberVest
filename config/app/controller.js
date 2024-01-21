@@ -1,9 +1,9 @@
 import risks from "./model.js";
 
-
 const getRisk = async (req, res) => {
-    const query = risks.find({Tolerance: 3})
-    return query
+    const data = req.params.tolerance
+    const query = await risks.findOne({'tolerance.value': data})
+    res.status(200).send(query? query.tolerance: null)
 }
 
 export default getRisk
