@@ -49,12 +49,12 @@ const Tolerance = () => {
 
                     <div>
                        <div>
-                        {data.data.stocks.filter((stock) => stock.percentage !== 0).map((stock) => (
+                        {data? data.data.stocks.filter((stock) => stock.percentage !== 0).map((stock) => (
                             <div className='bars'>
                                 <div><p>{stock.name}</p></div>
                                 <div style={{width:`${stock.percentage + 10}%`}}>{stock.percentage}%</div>
                             </div>
-                        ))}
+                        )) : ''}
                        </div>
                     </div>
                 </div>
