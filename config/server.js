@@ -13,7 +13,6 @@ server.use(morgan('dev'))
 
 const uri = process.env.MONGODB_URL;
 
-
 async function connect() {
     try {
         await mongoose.connect(uri);
@@ -26,12 +25,6 @@ async function connect() {
 
 connect();
 
-server.get('/api/v1/risk/:tolerance', async (req, res) => {
-    try {
-        await getRisk();
-    } catch(error) {
-        console.log(error)
-    }
-});
+server.get('/api/v1/risk/:tolerance', getRisk);
 
 server.listen(3000, console.log('Server runnung on port 3000'))
