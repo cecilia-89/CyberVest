@@ -4,6 +4,8 @@ import { Slider } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import axios from '../axios';
 
+console.log(import.meta.env.VITE_APT_URL)
+
 const Tolerance = () => {
 
     const [value, setValue] = useState(0);
@@ -16,7 +18,7 @@ const Tolerance = () => {
     //makes an API call to the server
     const { data, isLoading, isError } = useQuery({
         queryKey: ['risks', value],
-        queryFn: () => axios.get(`/risk/${value}`)
+        queryFn: () => axios.get(`risk/${value}`)
     },)
 
 
