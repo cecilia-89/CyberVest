@@ -8,6 +8,7 @@ import getRisk from './controller.js';
 const server = express();
 dotenv.config()
 server.use(cors())
+server.use(express.json())
 server.use(morgan('dev'))
 
 const uri = process.env.MONGODB_URL;
@@ -25,5 +26,12 @@ async function connect() {
 
 connect();
 
-server.get('/api/v1/risk/:tolerance', getRisk);
+server.get('/api/v1/risk/:tolerance', async (req, res) => {
+    try {
+        await getRisk();
+    } catch(error) {
+        console.log(error)
+    }
+});
+
 server.listen(3000, console.log('Server runnung on port 3000'))

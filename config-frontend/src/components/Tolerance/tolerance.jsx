@@ -8,16 +8,19 @@ const Tolerance = () => {
 
     const [value, setValue] = useState(0);
 
+    //handle change on click
     const handleChange = async (e, value) => {
         setValue(value)
     }
 
+    //makes an API call to the server
     const { data, isLoading, isError } = useQuery({
         queryKey: ['risks', value],
-        queryFn: () => axios.get(`risk/${value}`)
+        queryFn: () => axios.get(`/risk/${value}`)
     },)
 
 
+    //returns JSX based on the return value of `useQuery'
     const getState = () => {
 
         if (isLoading) {
